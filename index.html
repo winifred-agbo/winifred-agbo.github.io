@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winifred Agbo | Geospatial Analyst & Photogrammetrist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: #f5f7fa;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+            color: white;
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            background: #e94560;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #e94560;
+            margin-bottom: 16px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .contact-info a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: #e94560;
+        }
+
+        /* Section styling */
+        section {
+            padding: 48px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 24px;
+            color: #0f3460;
+            border-left: 4px solid #e94560;
+            padding-left: 16px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin: 20px 0 12px;
+            color: #16213e;
+        }
+
+        /* Skills grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .skill-category h4 {
+            color: #e94560;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .skill-category li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #e94560;
+        }
+
+        /* Project cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0f3460;
+            margin-bottom: 8px;
+        }
+
+        .project-meta {
+            font-size: 0.8rem;
+            color: #e94560;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-description {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 16px;
+        }
+
+        .project-stats {
+            background: #f0f2f5;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            margin: 12px 0;
+        }
+
+        .project-stats table {
+            width: 100%;
+            font-size: 0.8rem;
+        }
+
+        .project-stats td {
+            padding: 4px 0;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: #e94560;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Experience */
+        .experience-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .job-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #0f3460;
+        }
+
+        .company {
+            color: #e94560;
+            margin-bottom: 8px;
+        }
+
+        .date {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 12px;
+        }
+
+        .experience-item ul {
+            padding-left: 20px;
+        }
+
+        .experience-item li {
+            margin-bottom: 8px;
+        }
+
+        /* Education */
+        .education-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .degree {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #0f3460;
+        }
+
+        /* Certifications */
+        .certs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .cert-badge {
+            background: #e0e7ff;
+            color: #0f3460;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #16213e;
+            color: #ccc;
+            text-align: center;
+            padding: 32px 0;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #e94560;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 16px;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: #c73a54;
+        }
+
+        hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            .container { padding: 0 16px; }
+            .contact-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="avatar">WA</div>
+            <h1>Winifred Agbo</h1>
+            <div class="tagline">Geospatial Analyst | GIS & Imagery | Data Governance | Photogrammetry</div>
+            <div class="contact-info">
+                <span>📍 Calgary, AB, Canada</span>
+                <span>📞 368-886-1722</span>
+                <span>📧 adaobi.winifred17@gmail.com</span>
+            </div>
+            <div class="contact-info">
+                <a href="#">🔗 LinkedIn</a>
+                <a href="#">📁 GitHub</a>
+                <a href="#">📄 Download Resume (PDF)</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Professional Summary -->
+        <section>
+            <h2>Professional Summary</h2>
+            <p>Geomatics Engineer (MEng, University of Calgary) with hands-on experience in <strong>photogrammetry, SAR/radar analysis, and AI training dataset preparation</strong>. Proficient in QGIS, ArcGIS Suite, and spatial data processing. Skilled at interpreting satellite imagery, extracting terrain models, and translating geospatial data into actionable insights for energy and infrastructure projects.</p>
+        </section>
+
+        <!-- Core Skills -->
+        <section>
+            <h2>Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>GIS & Photogrammetry</h4>
+                    <ul>
+                        <li>QGIS / ArcGIS Pro / ArcMap</li>
+                        <li>Photogrammetric Feature Extraction</li>
+                        <li>0.5m Stereo Satellite Imagery</li>
+                        <li>Terrain Modeling & DEM Generation</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Imagery & AI/ML</h4>
+                    <ul>
+                        <li>SAR/Radar Change Detection</li>
+                        <li>AI Training Dataset Annotation</li>
+                        <li>Anomaly Detection & Reporting</li>
+                        <li>Remote Sensing Analysis</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Survey & Field</h4>
+                    <ul>
+                        <li>GNSS RTK / Total Station</li>
+                        <li>Topographic & As-built Surveys</li>
+                        <li>Construction Layout</li>
+                        <li>QA/QC & Geodetic Integrity</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Programming & Automation</h4>
+                    <ul>
+                        <li>Python (arcpy, geopandas)</li>
+                        <li>MATLAB</li>
+                        <li>ArcGIS ModelBuilder</li>
+                        <li>Workflow Automation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects -->
+        <section>
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1: Nnwadoro -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">Nnwadoro Pipeline Route Investigation</div>
+                        <div class="project-meta">Photogrammetry | GIS | Satellite Imagery</div>
+                        <div class="project-description">
+                            Route assessment for ~9 Tcf deep-water gas project. Analyzed 5 offshore landfall options using 0.5m stereo satellite imagery.
+                        </div>
+                        <div class="project-stats">
+                            <table style="width:100%">
+                                <tr><td><strong>Onshore Length</strong></td><td>2.8–7.0 km</td></tr>
+                                <tr><td><strong>Settlement Traversed</strong></td><td>2.5–4.8 km</td></tr>
+                                <tr><td><strong>River Widths</strong></td><td>Up to 139 m</td></tr>
+                            </table>
+                        </div>
+                        <a href="#" class="project-link">📄 View Report →</a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Ubie to Zarama -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">Ubie FS to Zarama NAG Manifold</div>
+                        <div class="project-meta">Route Optimization | GIS | ROW Analysis</div>
+                        <div class="project-description">
+                            Gas evacuation route optimization. Identified optimal route reducing new ROW by 63% compared to alternatives.
+                        </div>
+                        <div class="project-stats">
+                            <table style="width:100%">
+                                <tr><td><strong>Optimal Length</strong></td><td>27.6 km</td></tr>
+                                <tr><td><strong>Existing ROW Usage</strong></td><td>89.9%</td></tr>
+                                <tr><td><strong>Communities (2km)</strong></td><td>13</td></tr>
+                            </table>
+                        </div>
+                        <a href="#" class="project-link">📄 View Report →</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: SAR/Anomaly Detection -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">SAR/Radar Anomaly Detection</div>
+                        <div class="project-meta">Remote Sensing | AI Training Data | Change Detection</div>
+                        <div class="project-description">
+                            Annotated geospatial features for ML model training. Performed SAR change detection for ground deformation monitoring.
+                        </div>
+                        <div class="project-stats">
+                            <table style="width:100%">
+                                <tr><td><strong>Features Annotated</strong></td><td>Settlements, roads, water, vegetation</td></tr>
+                                <tr><td><strong>Application</strong></td><td>Infrastructure integrity assessment</td></tr>
+                            </table>
+                        </div>
+                        <a href="#" class="project-link">📡 View Analysis →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section>
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="job-title">GIS Analyst (Remote, Part-Time)</div>
+                <div class="company">Amelin Projects Limited</div>
+                <div class="date">May 2023 – Present</div>
+                <ul>
+                    <li>Conducted pipeline route assessments for Nnwadoro deep-water gas project (~9 Tcf) using 0.5m satellite imagery and enterprise SDE data.</li>
+                    <li>Optimized gas evacuation routes, reducing new ROW by 63% and identifying optimal 27.6km alignment.</li>
+                    <li>Prepared AI training datasets by annotating geospatial features from high-res imagery.</li>
+                    <li>Performed SAR/radar change detection for ground deformation monitoring.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">GIS & Survey Support</div>
+                <div class="company">Marigold Infrastructure Partners – Edmonton Valley Line West LRT</div>
+                <div class="date">January 2026 – Present</div>
+                <ul>
+                    <li>Provided geomatic support for $2.6 billion, 14-km LRT expansion.</li>
+                    <li>Conducted construction layout and as-built surveys using robotic total stations and GNSS.</li>
+                    <li>Applied photogrammetric techniques to extract terrain models for route alignment.</li>
+                    <li>Integrated field survey data with GIS platforms for corridor mapping and utility conflict identification.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section>
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="degree">MEng, Geomatics Engineering</div>
+                <div>University of Calgary, Calgary, AB</div>
+                <div style="color:#888; font-size:0.85rem;">Completed January 2026</div>
+                <div style="margin-top:8px;"><strong>Relevant Coursework:</strong> Photogrammetry, Remote Sensing, Geodetic Positioning, Spatial Analysis, Enterprise GIS</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">BSc (Hons), Electrical & Electronics Engineering</div>
+                <div>Enugu State University of Science and Technology, Enugu</div>
+                <div style="color:#888; font-size:0.85rem;">Completed 2017</div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section>
+            <h2>Certifications</h2>
+            <div class="certs">
+                <span class="cert-badge">H2S Alive (2026)</span>
+                <span class="cert-badge">Class 5 Driver's License</span>
+                <span class="cert-badge">Standard First Aid & CPR/AED (2023)</span>
+                <span class="cert-badge">CSTS 2020</span>
+                <span class="cert-badge">WHMIS 2015</span>
+            </div>
+        </section>
+
+        <!-- Contact / Call to Action -->
+        <section>
+            <h2>Interested in Working Together?</h2>
+            <p>I'm currently available for <strong>Cartographer, Photogrammetrist, and GIS Analyst</strong> roles. Open to remote, contract, and project-based opportunities.</p>
+            <a href="mailto:adaobi.winifred17@gmail.com" class="btn">📧 Send me a message</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Winifred Agbo | Geospatial Analyst & Photogrammetrist</p>
+            <p style="margin-top: 12px; font-size: 0.8rem;">"Translating complex geospatial data into actionable insights"</p>
+        </div>
+    </footer>
+</body>
+</html>
