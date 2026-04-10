@@ -76,6 +76,17 @@
             color: #e94560;
         }
 
+        .confidential-badge {
+            display: inline-block;
+            background: #1a1a2e;
+            color: #e94560;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-top: 16px;
+            border: 1px solid #e94560;
+        }
+
         /* Section styling */
         section {
             padding: 48px 0;
@@ -141,7 +152,7 @@
         /* Project cards */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 24px;
             margin-top: 20px;
         }
@@ -152,6 +163,9 @@
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .project-card:hover {
@@ -161,6 +175,9 @@
 
         .project-content {
             padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-title {
@@ -201,17 +218,15 @@
             padding: 4px 0;
         }
 
-        .project-link {
-            display: inline-block;
+        .confidential-note {
+            background: #fef2e8;
+            padding: 10px;
+            border-radius: 8px;
             margin-top: 12px;
-            color: #e94560;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
-        .project-link:hover {
-            text-decoration: underline;
+            font-size: 0.8rem;
+            color: #c73a54;
+            border-left: 3px solid #e94560;
+            text-align: center;
         }
 
         /* Experience */
@@ -279,12 +294,11 @@
             font-size: 0.8rem;
         }
 
-        /* Footer */
-        footer {
-            background: #16213e;
-            color: #ccc;
+        /* Contact section */
+        .contact-section {
             text-align: center;
-            padding: 32px 0;
+            background: #eef2f7;
+            border-radius: 16px;
             margin-top: 20px;
         }
 
@@ -292,16 +306,25 @@
             display: inline-block;
             background: #e94560;
             color: white;
-            padding: 10px 24px;
+            padding: 12px 32px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 500;
-            margin-top: 16px;
+            margin-top: 20px;
             transition: background 0.2s;
         }
 
         .btn:hover {
             background: #c73a54;
+        }
+
+        /* Footer */
+        footer {
+            background: #16213e;
+            color: #ccc;
+            text-align: center;
+            padding: 32px 0;
+            margin-top: 20px;
         }
 
         hr {
@@ -314,6 +337,7 @@
             h1 { font-size: 1.8rem; }
             .container { padding: 0 16px; }
             .contact-info { flex-direction: column; gap: 8px; }
+            .projects-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -331,7 +355,9 @@
             <div class="contact-info">
                 <a href="#">🔗 LinkedIn</a>
                 <a href="#">📁 GitHub</a>
-                <a href="#">📄 Download Resume (PDF)</a>
+            </div>
+            <div class="confidential-badge">
+                🔒 Portfolio available upon request – Confidential projects
             </div>
         </div>
     </header>
@@ -341,6 +367,7 @@
         <section>
             <h2>Professional Summary</h2>
             <p>Geomatics Engineer (MEng, University of Calgary) with hands-on experience in <strong>photogrammetry, SAR/radar analysis, and AI training dataset preparation</strong>. Proficient in QGIS, ArcGIS Suite, and spatial data processing. Skilled at interpreting satellite imagery, extracting terrain models, and translating geospatial data into actionable insights for energy and infrastructure projects.</p>
+            <p style="margin-top: 12px; font-style: italic; color: #666;">📌 Due to project confidentiality, detailed work samples and geospatial deliverables are available to verified employers upon request or under signed NDA.</p>
         </section>
 
         <!-- Core Skills -->
@@ -396,16 +423,19 @@
                         <div class="project-title">Nnwadoro Pipeline Route Investigation</div>
                         <div class="project-meta">Photogrammetry | GIS | Satellite Imagery</div>
                         <div class="project-description">
-                            Route assessment for ~9 Tcf deep-water gas project. Analyzed 5 offshore landfall options using 0.5m stereo satellite imagery.
+                            Route assessment for ~9 Tcf deep-water gas project. Analyzed 5 offshore landfall options and multiple onshore routes to CPF locations using 0.5m stereo satellite imagery and enterprise SDE vector data.
                         </div>
                         <div class="project-stats">
                             <table style="width:100%">
                                 <tr><td><strong>Onshore Length</strong></td><td>2.8–7.0 km</td></tr>
                                 <tr><td><strong>Settlement Traversed</strong></td><td>2.5–4.8 km</td></tr>
                                 <tr><td><strong>River Widths</strong></td><td>Up to 139 m</td></tr>
+                                <tr><td><strong>Communities within 2km</strong></td><td>2–3 settlements</td></tr>
                             </table>
                         </div>
-                        <a href="#" class="project-link">📄 View Report →</a>
+                        <div class="confidential-note">
+                            🔒 Confidential – Full report and geospatial deliverables available upon request
+                        </div>
                     </div>
                 </div>
 
@@ -415,16 +445,19 @@
                         <div class="project-title">Ubie FS to Zarama NAG Manifold</div>
                         <div class="project-meta">Route Optimization | GIS | ROW Analysis</div>
                         <div class="project-description">
-                            Gas evacuation route optimization. Identified optimal route reducing new ROW by 63% compared to alternatives.
+                            Gas evacuation route optimization for NLNG supply. Evaluated 3 proposed route options using high-res satellite imagery and existing SPDC ROW data.
                         </div>
                         <div class="project-stats">
                             <table style="width:100%">
                                 <tr><td><strong>Optimal Length</strong></td><td>27.6 km</td></tr>
                                 <tr><td><strong>Existing ROW Usage</strong></td><td>89.9%</td></tr>
-                                <tr><td><strong>Communities (2km)</strong></td><td>13</td></tr>
+                                <tr><td><strong>New ROW Reduction</strong></td><td>63% vs alternatives</td></tr>
+                                <tr><td><strong>Communities (2km buffer)</strong></td><td>13</td></tr>
                             </table>
                         </div>
-                        <a href="#" class="project-link">📄 View Report →</a>
+                        <div class="confidential-note">
+                            🔒 Confidential – Full report and geospatial deliverables available upon request
+                        </div>
                     </div>
                 </div>
 
@@ -434,15 +467,18 @@
                         <div class="project-title">SAR/Radar Anomaly Detection</div>
                         <div class="project-meta">Remote Sensing | AI Training Data | Change Detection</div>
                         <div class="project-description">
-                            Annotated geospatial features for ML model training. Performed SAR change detection for ground deformation monitoring.
+                            Prepared training datasets for geospatial AI models. Annotated features from high-res satellite imagery and performed SAR change detection for infrastructure monitoring.
                         </div>
                         <div class="project-stats">
                             <table style="width:100%">
-                                <tr><td><strong>Features Annotated</strong></td><td>Settlements, roads, water, vegetation</td></tr>
-                                <tr><td><strong>Application</strong></td><td>Infrastructure integrity assessment</td></tr>
+                                <tr><td><strong>Features Annotated</strong></td><td>Settlements, roads, water, vegetation, land cover</td></tr>
+                                <tr><td><strong>Application</strong></td><td>Ground deformation monitoring & infrastructure integrity</td></tr>
+                                <tr><td><strong>Method</strong></td><td>SAR/Radar change detection</td></tr>
                             </table>
                         </div>
-                        <a href="#" class="project-link">📡 View Analysis →</a>
+                        <div class="confidential-note">
+                            🔒 Confidential – Methodology and samples available upon request
+                        </div>
                     </div>
                 </div>
             </div>
@@ -458,9 +494,10 @@
                 <div class="date">May 2023 – Present</div>
                 <ul>
                     <li>Conducted pipeline route assessments for Nnwadoro deep-water gas project (~9 Tcf) using 0.5m satellite imagery and enterprise SDE data.</li>
-                    <li>Optimized gas evacuation routes, reducing new ROW by 63% and identifying optimal 27.6km alignment.</li>
-                    <li>Prepared AI training datasets by annotating geospatial features from high-res imagery.</li>
-                    <li>Performed SAR/radar change detection for ground deformation monitoring.</li>
+                    <li>Optimized gas evacuation routes, reducing new ROW by 63% and identifying optimal 27.6 km alignment.</li>
+                    <li>Prepared AI training datasets by annotating geospatial features from high-res satellite imagery.</li>
+                    <li>Performed SAR/radar change detection for ground deformation monitoring and infrastructure integrity assessment.</li>
+                    <li>Generated route comparison statistics including community impacts, vegetation traversed, and infrastructure crossings.</li>
                 </ul>
             </div>
 
@@ -469,10 +506,11 @@
                 <div class="company">Marigold Infrastructure Partners – Edmonton Valley Line West LRT</div>
                 <div class="date">January 2026 – Present</div>
                 <ul>
-                    <li>Provided geomatic support for $2.6 billion, 14-km LRT expansion.</li>
-                    <li>Conducted construction layout and as-built surveys using robotic total stations and GNSS.</li>
-                    <li>Applied photogrammetric techniques to extract terrain models for route alignment.</li>
-                    <li>Integrated field survey data with GIS platforms for corridor mapping and utility conflict identification.</li>
+                    <li>Provided geomatic support for $2.6 billion, 14-km LRT expansion from downtown Edmonton to Lewis Farms.</li>
+                    <li>Conducted construction layout, topographic surveys, and as-built surveys using robotic total stations and GNSS RTK technology.</li>
+                    <li>Applied photogrammetric techniques to extract terrain models, feature geometry, and elevation profiles for route alignment.</li>
+                    <li>Integrated field survey data with GIS platforms for corridor mapping, utility conflict identification, and spatial data visualization.</li>
+                    <li>Supported earthwork and cut-fill volume management through field data collection and quality control.</li>
                 </ul>
             </div>
         </section>
@@ -484,7 +522,7 @@
                 <div class="degree">MEng, Geomatics Engineering</div>
                 <div>University of Calgary, Calgary, AB</div>
                 <div style="color:#888; font-size:0.85rem;">Completed January 2026</div>
-                <div style="margin-top:8px;"><strong>Relevant Coursework:</strong> Photogrammetry, Remote Sensing, Geodetic Positioning, Spatial Analysis, Enterprise GIS</div>
+                <div style="margin-top: 8px;"><strong>Relevant Coursework:</strong> Photogrammetry, Remote Sensing, Geodetic Positioning, Spatial Analysis, Enterprise GIS</div>
             </div>
             <div class="education-item">
                 <div class="degree">BSc (Hons), Electrical & Electronics Engineering</div>
@@ -506,10 +544,12 @@
         </section>
 
         <!-- Contact / Call to Action -->
-        <section>
-            <h2>Interested in Working Together?</h2>
-            <p>I'm currently available for <strong>Cartographer, Photogrammetrist, and GIS Analyst</strong> roles. Open to remote, contract, and project-based opportunities.</p>
-            <a href="mailto:adaobi.winifred17@gmail.com" class="btn">📧 Send me a message</a>
+        <section class="contact-section" style="text-align: center; background: #eef2f7; border-radius: 16px; padding: 48px 24px; margin-bottom: 48px;">
+            <h2 style="border-left: none; text-align: center;">Interested in Working Together?</h2>
+            <p style="margin-bottom: 8px;">I'm currently available for <strong>Cartographer, Photogrammetrist, and GIS Analyst</strong> roles.</p>
+            <p style="margin-bottom: 16px;">Open to remote, contract, and project-based opportunities.</p>
+            <p style="margin-bottom: 24px; font-size: 0.9rem; color: #e94560;">🔒 Full project portfolio and geospatial deliverables available upon request or under NDA</p>
+            <a href="mailto:adaobi.winifred17@gmail.com" class="btn">📧 Contact Me</a>
         </section>
     </main>
 
